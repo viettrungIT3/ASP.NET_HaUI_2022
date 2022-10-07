@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Nhập nhân viên";
+}
+
+<h2>Nhập nhân viên</h2>
+<table border="1" cellspacing="0" width="500px">
+    <tr>
+        <td width="35%"><b>Mã nhân viên:</b></td>
+        <td width="65%">
+            <input id="maNV" type="text" />
+        </td>
+    </tr>
+    <tr>
+        <td><b>Họ tên:</b></td>
+        <td>
+            <input id="hoTen" type="text" />
+        </td>
+    </tr>
+    <tr>
+        <td><b>Ngày sinh:</b></td>
+        <td>
+            <input id="ngaySinh" type="text" />
+        </td>
+    </tr>
+    <tr>
+        <td><b>Giới tính:</b></td>
+        <td>
+            @Html.RadioButton("Gender", "Male") Nam
+            @Html.RadioButton("Gender", "Female") Nữ
+        </td>
+    </tr>
+    <tr>
+        <td><b>Chức vụ: </b></td>
+        <td>
+            <select>
+                <option>Trưởng phòng</option>
+                <option>Phó phòng</option>
+                <option>Nhân viên</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Ngoại ngữ:</b></td>
+        <td>
+            <input type="checkbox" name="ngonNgu" value="nnAnh" /> Anh
+            <input type="checkbox" name="ngonNgu" value="nnPhap" /> Pháp
+            <input type="checkbox" name="ngonNgu" value="nnNga" /> Nga
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button value="">Lưu</button>
+            <button value="">Xoá</button>
+        </td>
+    </tr>
+</table>
+
