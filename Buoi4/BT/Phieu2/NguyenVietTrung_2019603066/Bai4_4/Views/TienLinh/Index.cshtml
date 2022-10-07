@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<form action="/TienLinh/Tinh" method="post">
+    <table border="1" cellpadding="0" cellspacing="0" width="500px">
+        <tr>
+            <td width="150px"><label>Mã NV: </label></td>
+            <td>
+                <input type="text" name="maNV" />
+            </td>
+        </tr>
+        <tr>
+            <td width="150px"><label>Bậc lương: </label></td>
+            <td>
+                <input type="number" name="bacLuong" step="0.1" min="0"/>
+            </td>
+        </tr>
+        <tr>
+            <td width="150px"><label>Ngày công: </label></td>
+            <td>
+                <input type="number" name="ngayCong" min="0" max="31"/>
+            </td>
+        </tr>
+        <tr>
+            <td width="150px"><label>Chức vụ: </label></td>
+            <td>
+                <select name="chucVU">
+                    <option value="Trưởng phòng">Trưởng phòng</option>
+                    <option value="Phó phòng">Phó phòng</option>
+                    <option value="Nhân viên">Nhân viên</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td width="150px"><label>Giới tính: </label></td>
+            <td>
+                <input checked="checked" id="Gender1" name="gioiTinh" type="radio" value="Nam" /> 
+                <label for="Gender1">Nam</label>
+                <input id="Gender2" name="gioiTinh" type="radio" value="Nu" /> 
+                <label for="Gender2">Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td width="150px"><label>Ngoại ngữ: </label></td>
+            <td>
+                <input checked="checked" id="check1" name="ngoaiNgu" type="checkbox" value="Anh" />
+                <label for="check1">Anh</label>
+                <input id="check2" name="ngoaiNgu" type="checkbox" value="Phap" />
+                <label for="check2">Pháp</label>
+                <input id="check3" name="ngoaiNgu" type="checkbox" value="Nga" />
+                <label for="check3">Nga</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Tiền lĩnh: </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">TÍNH</button>
+                <button type="reset">XOÁ</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
