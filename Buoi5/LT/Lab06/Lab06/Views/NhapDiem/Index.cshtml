@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Đọc ghi file</h2>
+<form action="" method="post">
+    <label>Mã SV: </label> <br />
+    <input name="Id" /> <br />
+    <label>Họ tên: </label> <br />
+    <input name="Name" /> <br />
+    <label>Điểm: </label> <br />
+    <input type="number" name="Mark" step="0.1" min="0" max="10"/>
+    <hr />
+    <input type="submit" value="Lưu" formaction="/NhapDiem/Save" />
+    <input type="submit" value="Mở" formaction="/NhapDiem/Open" />
+</form>
+
+<p>@ViewBag.HanhDong</p>
+<p>@ViewBag.ThongTin</p>
+
