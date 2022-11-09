@@ -1,0 +1,50 @@
+﻿@model NguyenVietTrung_2019603066_De2.Models.SanPham
+
+@{
+    ViewBag.Title = "KetQua";
+}
+
+<style>
+    table {
+        background-color: #ffaf;
+        color: #808080;
+        border: 2px solid #333;
+    }
+    td:first-child {
+        padding: 4px 40px 4px 4px;
+    }
+    td:last-child {
+        padding: 4px 4px 4px 4px;
+    }
+</style>
+
+@{ 
+    var txtThanhTien = string.Format("{0:0,0}", Model.ThanhTien()) + " VND";
+}
+
+<h2>KetQua</h2>
+
+<div>
+    <h4>SanPham</h4>
+    <hr />
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>Mã sản phẩm: </td>
+            <td>@Html.DisplayFor(model => model.maSP)</td>
+        </tr>
+        <tr>
+            <td>Tên sản phẩm: </td>
+            <td>@Html.DisplayFor(model => model.tenSP)</td>
+        </tr>
+        <tr>
+            <td>Thành tiền: </td>
+            <td>
+                @txtThanhTien
+            </td>
+        </tr>
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back", "Cau2")
+</p>

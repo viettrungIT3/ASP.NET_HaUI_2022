@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Câu 2";
+}
+
+<h2>Câu 2</h2>
+
+@using (Html.BeginForm("KetQua", "Home"))
+{
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                @Html.Label("Mã sản phẩm: ");
+            </td>
+            <td>
+                @Html.TextBox("maSP");
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Tên sản phẩm: ");
+            </td>
+            <td>
+                @Html.TextBox("tenSP");
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Loại sản phẩm: ");
+            </td>
+            <td>
+                <select name="loaiSP">
+                    <option>Nông sản</option>
+                    <option>Hải sản</option>
+                    <option>Đồ uống</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Số lượng: ");
+            </td>
+            <td>
+                @Html.TextBox("soLuong");
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Đơn giá: ");
+            </td>
+            <td>
+                @Html.TextBox("donGia");
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Thành tiền: ");
+            </td>
+            <td>
+                <input type="text" name="thanhTien" value="" readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Tính" />
+            </td>
+        </tr>
+    </table>
+}

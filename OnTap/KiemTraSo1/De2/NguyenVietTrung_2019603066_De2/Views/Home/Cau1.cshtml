@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Cau1";
+}
+
+@{ 
+    double thanhTien = 0;
+    var txtThanhTien = "";
+    if (IsPost)
+    {
+        int soLuong = Request["soLuong"].AsInt();
+        float donGia = Request["donGia"].AsFloat();
+        if (soLuong >= 200)
+        {
+            thanhTien = soLuong * donGia * 0.85;
+        }
+        else
+        {
+            thanhTien = soLuong * donGia;
+        }
+        txtThanhTien = string.Format("{0:0,0}", thanhTien) + " VND";
+    }
+}
+
+<h2>Câu 1</h2>
+
+<form action="" method="post">
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <label>Mã sản phẩm: </label>
+            </td>
+            <td>
+                <input type="text" name="maSP" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Tên sản phẩm: </label>
+            </td>
+            <td>
+                <input type="text" name="tenSP" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Loại sản phẩm: </label>
+            </td>
+            <td>
+                <select name="loaiSP">
+                    <option>Nông sản</option>
+                    <option>Hải sản</option>
+                    <option>Đồ uống</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Số lượng: </label>
+            </td>
+            <td>
+                <input type="text" name="soLuong" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Đơn giá: </label>
+            </td>
+            <td>
+                <input type="text" name="donGia" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Thành tiền: </label>
+            </td>
+            <td>
+                <input type="text" name="thanhTien" value="@txtThanhTien" readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Tính" />
+            </td>
+        </tr>
+    </table>
+</form>
