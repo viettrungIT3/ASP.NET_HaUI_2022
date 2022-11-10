@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NguyenVietTrung_2019603066_De4.Models;
 
 namespace NguyenVietTrung_2019603066_De4.Controllers
 {
@@ -25,6 +26,21 @@ namespace NguyenVietTrung_2019603066_De4.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Cau1()
+        {
+            return View();
+        }
+
+        public ActionResult Cau2()
+        {
+            return View();
+        }
+
+        public ActionResult KetQua(GiangVien s)
+        {
+            return View(s);
         }
     }
 }

@@ -1,0 +1,46 @@
+﻿@model NguyenVietTrung_2019603066_De4.Models.GiangVien
+
+@{
+    ViewBag.Title = "KetQua";
+}
+
+<style>
+    table {
+        background-color: #ffaf;
+        color: #808080;
+        border: 2px solid #333;
+    }
+
+    td {
+        padding: 4px 40px 4px;
+    }
+</style>
+
+<h2>KetQua</h2>
+
+<div>
+    <h4>GiangVien</h4>
+    <hr />
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>Mã giảng viên: </td>
+            <td>@Html.DisplayFor(model => model.maGV)</td>
+        </tr>
+        <tr>
+            <td>Tên giảng viên: </td>
+            <td>@Html.DisplayFor(model => model.hoTen)</td>
+        </tr>
+        <tr>
+            <td>Mã giảng viên: </td>
+            <td>
+                @{ 
+                    var txtLuongThang = (string.Format("{0:0,0}", Model.LuongThang()) + " VND");
+                }
+            @txtLuongThang</td>
+        </tr>
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back ", "Cau2")
+</p>

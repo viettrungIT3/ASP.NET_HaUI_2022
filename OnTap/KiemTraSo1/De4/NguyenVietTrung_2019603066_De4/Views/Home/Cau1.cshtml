@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Cau1";
+}
+
+@{ 
+    double luongThang = 0;
+    var txtLuongThang = "";
+    if (IsPost)
+    {
+        int soGio = Request["soGio"].AsInt();
+        float luongGio = Request["luongGio"].AsFloat();
+        if (soGio >= 120)
+        {
+            luongThang = (double)(luongGio * soGio * 1.1);
+        }
+        else
+        {
+            luongThang = (double)(luongGio * soGio);
+        }
+        txtLuongThang = (string.Format("{0:0,0}", luongThang) + " VND");
+    }
+}
+
+<style>
+    td:first-child {
+        padding: 4px 40px 4px;
+    }
+
+    td:last-child {
+        padding: 4px 60px 4px 40px;
+    }
+
+    input[type=submit] {
+        padding: 4px 12px;
+    }
+</style>
+
+<h2>Câu 1</h2>
+
+<form action="" method="post">
+    <table border="1">
+        <tr>
+            <td width="30%">
+                <label>Mã giảng viên: </label>
+            </td>
+            <td>
+                <input type="text" name="maGV">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Họ tên: </label>
+            </td>
+            <td>
+                <input type="text" name="hoTen">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Khoa: </label>
+            </td>
+            <td>
+                <select name="khoa" id="">
+                    <option value="Cơ khí">Cơ khí</option>
+                    <option value="Kinh tế">Kinh tế</option>
+                    <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Lương giờ: </label>
+            </td>
+            <td>
+                <input type="text" name="luongGio">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Số giờ: </label>
+            </td>
+            <td>
+                <input type="text" name="soGio">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Lương tháng: </label>
+            </td>
+            <td>
+                <input readonly="readonly" type="text" name="luongThang" value="@txtLuongThang">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Tính">
+            </td>
+        </tr>
+    </table>
+</form>
