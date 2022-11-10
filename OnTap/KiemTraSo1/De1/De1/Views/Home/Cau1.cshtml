@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Cau1";
+}
+
+@{
+    float ThanhTien = 0;
+    if (IsPost)
+    {
+        var donGia = Request["donGia"];
+        var soLuong = Request["soLuong"];
+        if (soLuong.AsInt() >= 100)
+        {
+            ThanhTien = (float)(soLuong.AsInt() * donGia.AsFloat() * 0.9);
+        }
+        else
+        {
+            ThanhTien = (float)(soLuong.AsInt() * donGia.AsFloat());
+        }
+    }
+
+}
+
+<style>
+    td:first-child {
+        padding: 4px 40px 4px;
+    }
+
+    td:last-child {
+        padding: 4px 60px 4px 40px;
+    }
+
+    input[type=submit] {
+        padding: 4px 12px;
+    }
+</style>
+
+<h2>Cau1</h2>
+
+<form action="" method="post">
+    <<table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <td width="35%"><label for="">Mã hàng: </label></td>
+            <td><input type="text" name="maHang"></td>
+        </tr>
+        <tr>
+            <td><label for="">Tên hàng: </label></td>
+            <td><input type="text" name="tenHang"></td>
+        </tr>
+        <tr>
+            <td><label for="">Loại hàng: </label></td>
+            <td>
+                <select name="loaiHang" id="">
+                    <option value="">--Lựa chọn--</option>
+                    <option value="QuanAo">Quần áo</option>
+                    <option value="DienTu">Điện tử</option>
+                    <option value="GiaDunng">Gia dụng</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">Đơn giá: </label></td>
+            <td><input type="text" name="donGia"></td>
+        </tr>
+        <tr>
+            <td><label for="">Số lượng: </label></td>
+            <td><input type="text" name="soLuong"></td>
+        </tr>
+        <tr>
+            <td><label for="">Thành tiền: </label></td>
+            <td>
+                <input value="@ThanhTien" readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Tinh" />
+            </td>
+        </tr>
+    </table>
+</form>

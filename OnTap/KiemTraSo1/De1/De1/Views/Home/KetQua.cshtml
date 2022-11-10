@@ -1,0 +1,44 @@
+﻿@model De1.Models.Hang
+
+@{
+    ViewBag.Title = "Cau2";
+}
+
+<style>
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
+<h2>Kết quả câu 2</h2>
+
+<div>
+    <hr />
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr style="background-color:yellowgreen; color:red;">
+            <th>@Html.Label("Mã hàng")</th>
+            <th>@Html.Label("Tên hàng")</th>
+            <th>@Html.Label("Thành tiền")</th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.maHang)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.tenHang)
+            </td>
+            <td>
+                @Model.ThanhTien()
+            </td>
+
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back", "Cau1")
+</p>

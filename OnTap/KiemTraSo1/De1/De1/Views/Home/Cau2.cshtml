@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Cau2";
+}
+
+<style>
+    td:first-child {
+        padding: 4px 40px 4px;
+    }
+
+    td:last-child {
+        padding: 4px 60px 4px 40px;
+    }
+
+    input[type=submit] {
+        padding: 4px 12px;
+    }
+</style>
+
+
+
+<h2>Câu 2</h2>
+
+@using (Html.BeginForm("KetQua", "Home"))
+{
+    <<table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <td width="35%">@Html.Label("Mã hàng: ")</td>
+            <td>@Html.TextBox("maHang")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Tên hàng: ")</td>
+            <td>@Html.TextBox("tenHang")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Loại hàng: ")</td>
+            <td>
+                @{
+                    IEnumerable<string> str = new List<string> { "Quần áo", "Điện tử", "Gia dụng" };
+                }
+                @Html.DropDownList("loaiHang",
+                    new SelectList(str, str.FirstOrDefault()))
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Đơn giá: ")</td>
+            <td>@Html.TextBox("donGia")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Số lượng: ")</td>
+            <td>@Html.TextBox("soLuong")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Thành tiền: ")</td>
+            <td>
+                <input readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Tinh" />
+            </td>
+        </tr>
+    </table>
+}
