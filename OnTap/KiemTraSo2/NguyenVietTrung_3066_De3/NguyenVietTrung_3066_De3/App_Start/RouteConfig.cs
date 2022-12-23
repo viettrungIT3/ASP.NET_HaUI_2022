@@ -16,7 +16,7 @@ namespace NguyenVietTrung_3066_De3
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Hangs", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
