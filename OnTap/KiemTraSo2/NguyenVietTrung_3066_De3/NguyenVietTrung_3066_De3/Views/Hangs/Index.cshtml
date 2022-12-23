@@ -9,6 +9,18 @@
 <p>
     @Html.ActionLink("Thêm mới", "Create")
 </p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.DisplayName("Nhập vào giá từ  ")
+    @Html.TextBox("start", ViewBag.CurrentFilter as string)
+    @Html.DisplayName(" Đến ")
+    @Html.TextBox("end", ViewBag.CurrentFilter2 as string)
+    <input type="submit" value=" Tìm" />
+}
+
+
 <table class="table">
     <tr>
         <th>
@@ -23,23 +35,24 @@
         <th>Chức năng</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tenhang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Loai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gia)
-        </td>
-        <td>
-            @Html.ActionLink("Sửa", "Edit", new { id=item.Mahang.Trim() }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id=item.Mahang.Trim() }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.Mahang.Trim() })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenhang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.Mahang.Trim() }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Mahang.Trim() }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.Mahang.Trim() })
+            </td>
+        </tr>
+    }
 
 </table>

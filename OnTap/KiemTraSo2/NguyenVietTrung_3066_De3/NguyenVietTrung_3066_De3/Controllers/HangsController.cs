@@ -15,8 +15,17 @@ namespace NguyenVietTrung_3066_De3.Controllers
         private NguyenVietTrung db = new NguyenVietTrung();
 
         // GET: Hangs
-        public ActionResult Index()
+        public ActionResult Index(string start, string end)
         {
+            if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+            {
+                ViewBag.CurrentFilter = start;
+                ViewBag.CurrentFilter2 = end;
+
+                var hangs2 = db.Hangs.ToList().Where(h => h.Gia >= int.Parse(start) && h.Gia <= int.Parse(end)).ToList();
+
+                return View(hangs2);
+            } else
             return View(db.Hangs.ToList());
         }
 
